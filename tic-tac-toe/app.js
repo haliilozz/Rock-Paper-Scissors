@@ -17,7 +17,8 @@ const pcScoreSpan = document.getElementById("pc-score");
 const yourScoreSpan = document.getElementById("your-score");
 //?modal
 const modalCardSection = document.querySelector(".modal-card");
-
+const finalMessagePar = document.getElementById("final-message");
+const playAgainBtn = document.getElementById("play-again");
 //*--------------variables
 let userSelectImg = document.createElement("img");
 let pcSelectImg = document.createElement("img");
@@ -82,4 +83,9 @@ const youWin = () => {
 
 const openModal = () => {
   modalCardSection.classList.add("show");
+  if (yourScoreSpan.textContent === "10") {
+    finalMessagePar.textContent = "you win";
+    Document.querySelector(".modal").style.backgroundColor = GREEN;
+    playAgainBtn.style.color = GREEN;
+  }
 };
