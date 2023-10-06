@@ -35,6 +35,10 @@ selectionArticle.addEventListener("click", (e) => {
     createPcSelection();
   }
 });
+playAgainBtn.addEventListener("click", () => {
+  modalCardSection.style.display = "none";
+  window.location.reload();
+});
 //*--------------functions
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
@@ -87,5 +91,9 @@ const openModal = () => {
     finalMessagePar.textContent = "you win";
     Document.querySelector(".modal").style.backgroundColor = GREEN;
     playAgainBtn.style.color = GREEN;
+  } else {
+    finalMessagePar.textContent = "you lost";
+    Document.querySelector(".modal").style.backgroundColor = RED;
+    playAgainBtn.style.color = RED;
   }
 };
